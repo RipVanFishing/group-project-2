@@ -27,6 +27,8 @@ a {
 
 img {
   display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .container {
@@ -225,10 +227,8 @@ img {
 }
 
 .categories-card-set {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -32px;
-  margin-bottom: -32px;
+  display: grid;
+  grid-template-columns: row;
 }
 
 .categories-item {
@@ -251,10 +251,99 @@ img {
   color: var(--text-color);
 }
 
+/* Популярные предложения
+ */
+.suggestions {
+  padding-top: 76px;
+  padding-bottom: 80px;
+  background-color: #fff;
+}
+.suggestions__title {
+  font-family: PT Serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 1.33;
+  color: #000000;
+  margin-bottom: 40px;
+}
+.suggestions__item:nth-child(3) {
+  grid-row-end: 3;
+  grid-row-start: 1;
+  grid-column-start: 3;
+  grid-column-end: 5;
+}
+
+.suggestions__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.suggestions__link {
+  position: relative;
+  display: block;
+}
+.suggestions__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(180deg, #000000 0%, #ffffff 48.44%, #ffffff 76.04%, #000000 100%);
+  mix-blend-mode: multiply;
+  opacity: 0.7;
+  border-radius: 6px;
+}
+.suggestions__subtitle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 16px;
+  margin-left: 21px;
+  margin-right: 17px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.3;
+  color: #ffffff;
+}
+.suggestions__price {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-bottom: 19px;
+  margin-left: 21px;
+  margin-right: 21px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 1.3;
+  color: #ffffff;
+}
+.wrap-link {
+  position: relative;
+}
+.suggestions__link--end {
+  position: absolute;
+  bottom: 0;
+  right: 15px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.suggestions__subtitle--all-offers {
+  margin-top: 92px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.3;
+  color: #ffffff;
+  text-align: center;
+}
 /* Основные направления деятельности */
 .directions {
   padding-top: 44px;
   padding-bottom: 80px;
+  background-color: rgba(112, 207, 41, 0.07);
 }
 
 .directions-title {
@@ -267,8 +356,9 @@ img {
 }
 
 .directions-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 33px 37px;
 }
 
 .directions-item {
